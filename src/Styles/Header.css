@@ -1,0 +1,13 @@
+
+.hello {
+  background-color: #a0d1ca;
+  text-align: center;
+  margin: 20px 20px 20px 20px;
+  border-radius: 30px;
+  border: solid 5px #e44222;
+  padding: 20px;
+  box-shadow: 1px 1px 8px 1px #e44222;
+}
+.hello h1 {
+  color:#3f2021
+}

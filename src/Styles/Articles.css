@@ -1,0 +1,25 @@
+ul.article_list {
+    margin-right: 32px;
+    padding: none;
+}
+.list_item {
+    display: block;
+    margin: 25px auto;
+    list-style: none;
+    padding: 0.75em;
+    color: #3f2021;
+    background-color: #a0d1ca;
+    border: solid 3px #e44222;
+    border-radius: 15px;
+    box-shadow: 1px 1px 8px 2px #e44222;
+}
+.links {
+    text-decoration: none;
+    color: #3f2021;
+}
+/* .links:visited {
+    color: #a0d1ca;
+} */
+.links:hover {
+    color: #e44222;
+}
