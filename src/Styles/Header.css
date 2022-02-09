@@ -2,8 +2,8 @@
 .hello {
   background-color: #a0d1ca;
   text-align: center;
-  margin: 20px 20px 5px 20px;
-  border-radius: 30px;
+  margin-bottom: 20px;
+  border-radius: 10px;
   border: solid 3px #e44222;
   padding: 10px 10px 0px 10px;
   box-shadow: 1px 1px 8px 1px #e44222;

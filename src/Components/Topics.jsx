@@ -18,7 +18,8 @@ const Topics = ({ topicSelected, setTopicSelection }) => {
     <>
       <div>
         <select className="select" onChange={handleChange}>
-          <option value="All">All</option>
+          
+          <option value="All">All Topics</option>
           {topics.length
             ? topics.map((topic) => {
                 return (

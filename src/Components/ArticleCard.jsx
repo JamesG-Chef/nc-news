@@ -2,8 +2,9 @@ import React, { useEffect, useState } from "react";
 import { Link, useParams } from "react-router-dom";
 import { getArticleCard, getArticleComments } from "../Utils/api";
 import "../Styles/ArticleCard.css";
-import "../Styles/Comments.css"
+import "../Styles/Comments.css";
 import Votes from "./Votes";
+import AddComment from "./AddComment";
 
 const ArticleCard = (props) => {
   const [article, setArticle] = useState([{}]);
@@ -18,17 +19,13 @@ const ArticleCard = (props) => {
 
   useEffect(() => {
     return getArticleComments(article_id).then((commentsFromApi) => {
-      console.log(commentsFromApi);
       setComments(commentsFromApi);
     });
   }, [article_id]);
 
   return (
     <>
-      <div className="votes_button_container">
-        <Votes votes={article[0].votes} article_id={article_id}/>
-        
-      </div>
+      
 
       <div className="article_container">
         <h1 className="article_title">{article[0].title}</h1>
@@ -38,14 +35,14 @@ const ArticleCard = (props) => {
         <p className="article_by">Comments: {article[0].comment_count}</p>
         <p className="article_body">{article[0].body}</p>
       </div>
-
-      <div className="comments_button_container">
-      <button className="comments_button" role="button">
-          Add a comment
-      </button>
+      <div className="votes_button_container">
+        <Votes votes={article[0].votes} article_id={article_id} />
       </div>
-      
-      
+
+      <div>
+        <AddComment article_id={article_id} />
+      </div>
+
       <ul className="comments_list">
         {comments.map((comment) => {
           return (
@@ -60,7 +57,9 @@ const ArticleCard = (props) => {
                 <p>{comment.body}</p>
               </li>
               <li>
-                <button className="comment_votes_button">Votes: {comment.votes}</button>
+                <button className="comment_votes_button">
+                  Votes: {comment.votes}
+                </button>
               </li>
             </div>
           );

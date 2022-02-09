@@ -14,7 +14,7 @@ const Votes = ({ votes, article_id }) => {
     return (
         <div>
             <button onClick={() => giveVote() } className="votes_button" role="button">
-          Votes: {votes + voteChange}
+          Add a vote: {votes + voteChange}
         </button>
         </div>
     );
