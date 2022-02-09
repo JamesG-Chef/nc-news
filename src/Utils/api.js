@@ -25,3 +25,19 @@ export const getArticleCard = (article_id) => {
     return data.article;
   });
 };
+
+export const getArticleComments = (article_id) => {
+  return newsApi.get(`articles/${article_id}/comments`).then(({ data }) => {
+    return data.commentsArray;
+  })
+}
+
+export const patchArticle = (article_id) => {
+  return newsApi.patch(`articles/${article_id}`, { inc_votes: 1 }).then((res) => {
+    return res.data.article;
+  })
+}
+
+export const postComment = (article_id) => {
+  return newsApi.post(`articles/${article_id}/comments`, {})
+}
