@@ -2,17 +2,24 @@ import React, { useContext, useState } from "react";
 import { postComment } from "../Utils/api";
 import UserContext from "./LoggedInUser";
 import "../Styles/CommentForm.css";
+import { Link, useNavigate } from "react-router-dom";
+import { Alert } from "bootstrap";
 
-const CommentForm = () => {
+const CommentForm = ({ article_id, comments, setComments, setShowCommentForm }) => {
+    
   const [form, setForm] = useState();
   const { loggedInUser } = useContext(UserContext);
   const username = loggedInUser.username;
 
   function handleSubmit(event) {
+    alert("Your comment has been submitted");
     event.preventDefault();
-    console.log(form);
-    //   postComment(username);
-      setForm("")
+      postComment(article_id, { username: username, body: form }).then((data) => {
+          setComments([...comments, data])
+          setShowCommentForm(false)
+    });
+
+    setForm("");
   }
 
   function handleChange(event) {
@@ -26,8 +33,10 @@ const CommentForm = () => {
         <h1>Add your comment</h1>
         <textarea
           value={form}
+          rows="4"
+          cols="50"
           className="comment_body"
-          type="text"
+          wrap="hard"
           placeholder="Add your comment here....."
           onChange={handleChange}
         ></textarea>

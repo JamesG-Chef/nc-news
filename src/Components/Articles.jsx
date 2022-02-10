@@ -6,13 +6,32 @@ import "../Styles/Articles.css";
 const Articles = (props) => {
   const { topicSelected } = props;
   const [articles, setArticles] = useState([]);
+  const [sortBy, setSortBy] = useState()
+  const [orderby, setOrderBy] = useState()
+  
 
   useEffect(() => {
-    getArticles(topicSelected).then((articlesFromApi) => {
+    getArticles(sortBy, orderby, topicSelected).then((articlesFromApi) => {
       setArticles(articlesFromApi);
+      console.log(articlesFromApi)
     });
-  }, [topicSelected]);
+  }, [sortBy, orderby, topicSelected]);
+
+  function handleChange(event) {
+    console.log(event.target.value);
+  setSortBy(event.target.value);
+}
+
+
   return (
+    <>
+      <select defaultValue="sort_by" className="select_sort_by" onChange={handleChange}>
+        <option value="sort_by" selected disabled>Sort by</option>
+        <option value="comment_count">Number of comments</option>
+        <option value="created_at">Date</option>
+        <option value="votes">Number of votes</option>
+      </select>
+
     <ul className="article_list">
       {articles.map((article) => {
         return (
@@ -31,10 +50,17 @@ const Articles = (props) => {
             <li>
               <h6 className="article_votes">Votes: {article.votes}</h6>
             </li>
+            <li>
+              <h6 className="article_comments">Comments: {article.comment_count}</h6>
+            </li>
           </div>
         );
       })}
     </ul>
+    
+    </>
+    
+    
   );
 };
 

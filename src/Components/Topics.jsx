@@ -17,7 +17,7 @@ const Topics = ({ topicSelected, setTopicSelection }) => {
   return (
     <>
       <div>
-        <select className="select" onChange={handleChange}>
+        <select className="select_topics" onChange={handleChange}>
           
           <option value="All">All Topics</option>
           {topics.length

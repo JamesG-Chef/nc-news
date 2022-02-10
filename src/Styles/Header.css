@@ -1,29 +1,45 @@
 
-.hello {
+.header {
   background-color: #a0d1ca;
   text-align: center;
   margin-bottom: 20px;
-  border-radius: 10px;
-  border: solid 3px #e44222;
+
+  border-bottom: solid 3px #e44222;
   padding: 10px 10px 0px 10px;
   box-shadow: 1px 1px 8px 1px #e44222;
 }
-.hello h1 {
+.title_container {
+background-color: #e9dbb2;
+margin: 10px 0px 5px 0px;;
+padding: 5px 2px 2px 2px;
+border-radius: 10px;
+border: solid 1px #3f2021;
+box-shadow: 0px 0px 8px 0px #e44222;
+}
+h1 .title {
   color:#3f2021;
   font-weight: 900px;
+  padding-top: 10px;
+}
+.user {
+  display: block;
+text-align: right;
 }
 .user_avatar {
   border: solid 2px #0c0d0d ;
   border-radius: 10px;
-  width: 40px;
+  width: 30px;
   object-fit: cover;
-  
 }
 span.username {
-  font-size: 20px;
-  font-weight: 700;
+  font-size: 15px;
+  font-weight: 600;
   padding: 15px;
-  ;
+  text-align: end;
+}
+#coffee_icon {
+  font-size: 33px;
+  padding-bottom: 5px;
 }
 .home-button {
   align-items: center;

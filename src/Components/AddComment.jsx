@@ -3,12 +3,11 @@ import { postComment } from "../Utils/api";
 import "../Styles/AddComment.css";
 import CommentForm from "./CommentForm";
 
-
-const AddComment = ({ article_id }) => {
+const AddComment = ({ article_id, comments, setComments }) => {
   const [showCommentForm, setShowCommentForm] = useState(false);
 
   const showForm = () => {
-      setShowCommentForm(true);
+    setShowCommentForm(true);
   };
 
   return showCommentForm === false ? (
@@ -18,7 +17,12 @@ const AddComment = ({ article_id }) => {
       </button>
     </div>
   ) : (
-        <CommentForm />  
+    <CommentForm
+      article_id={article_id}
+      comments={comments}
+        setComments={setComments}
+        setShowCommentForm={setShowCommentForm}
+    />
   );
 };
 

@@ -11,9 +11,9 @@ import Topics from "./Components/Topics";
 
 function App() {
   const [loggedInUser, setLoggedInUser] = useState({
-    username: "Hellboy",
-    avatar_url: "https://avatarfiles.alphacoders.com/107/107385.jpg",
-    kudos: 5,
+    username: "tickle122",
+    avatar_url:
+      "https://vignette.wikia.nocookie.net/mrmen/images/d/d6/Mr-Tickle-9a.png/revision/latest?cb=20180127221953",
   });
 
   const [topicSelected, setTopicSelection] = useState("All");
@@ -25,7 +25,7 @@ function App() {
       <UserContext.Provider value={{ loggedInUser, setLoggedInUser }}>
         <div className="App">
           <main>
-            <Header loggedInUser={loggedInUser}/>
+            <Header loggedInUser={loggedInUser} />
 
             <Routes>
               <Route
