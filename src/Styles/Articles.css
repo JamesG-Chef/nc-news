@@ -23,3 +23,15 @@ ul.article_list {
 .links:hover {
     color: #e44222;
 }
+.select_sort_by{
+    display: block;
+    text-align: center;
+    padding: 10px;
+    margin: 10px auto;
+    border-radius: 15px;
+    background-color: #3f2021;
+    color: #e9dbb2;
+    font-weight: 700;
+    border: solid 5px #e44222;
+    box-shadow: 1px 1px 8px 2px #e9dbb2;
+}

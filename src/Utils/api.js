@@ -6,12 +6,16 @@ const newsApi = axios.create({
 
 export const getArticles = (sort_by, order, topic) => {
   let query = "/articles";
-  if (topic !== "All") {
+  if (topic !== "All" && sort_by === "sort_by") {
     query += `?topic=${topic}`;
   }
-  if (sort_by !== "defaultValue") {
+  if (topic !== "All" && sort_by !== "sort_by") {
+    query += `?topic=${topic}&sort_by=${sort_by}`
+  }
+  if (topic === "All" && sort_by !== "sort_by") {
     query += `?sort_by=${sort_by}`
   }
+  
   return newsApi.get(query).then(({ data }) => {
     return data.articles;
   });

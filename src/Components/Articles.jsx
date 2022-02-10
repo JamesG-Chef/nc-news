@@ -6,7 +6,7 @@ import "../Styles/Articles.css";
 const Articles = (props) => {
   const { topicSelected } = props;
   const [articles, setArticles] = useState([]);
-  const [sortBy, setSortBy] = useState()
+  const [sortBy, setSortBy] = useState("sort_by")
   const [orderby, setOrderBy] = useState()
   
 
@@ -26,7 +26,7 @@ const Articles = (props) => {
   return (
     <>
       <select defaultValue="sort_by" className="select_sort_by" onChange={handleChange}>
-        <option value="sort_by" selected disabled>Sort by</option>
+        <option value="sort_by" disabled>Sort by</option>
         <option value="comment_count">Number of comments</option>
         <option value="created_at">Date</option>
         <option value="votes">Number of votes</option>
@@ -52,6 +52,9 @@ const Articles = (props) => {
             </li>
             <li>
               <h6 className="article_comments">Comments: {article.comment_count}</h6>
+            </li>
+            <li>
+              <h6 className="article_date">Date: {article.created_at}</h6>
             </li>
           </div>
         );
