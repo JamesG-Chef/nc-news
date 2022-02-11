@@ -1,7 +1,7 @@
 import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import ArticleCard from "./Components/ArticleCard";
+import SingleArticle from "./Components/SingleArticle";
 import Articles from "./Components/Articles";
 import Comments from "./Components/AddComment";
 import Header from "./Components/Header";
@@ -25,7 +25,6 @@ function App() {
         <div className="App">
           <main>
             <Header loggedInUser={loggedInUser} />
-
             <Routes>
               <Route
                 path="/"
@@ -39,7 +38,7 @@ function App() {
                   </>
                 }
               />
-              <Route path="/articles/:article_id" element={<ArticleCard />} />
+              <Route path="/articles/:article_id" element={<SingleArticle />} />
               <Route
                 path="/articles/:article_id/comments"
                 element={<Comments />}

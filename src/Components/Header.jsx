@@ -10,14 +10,15 @@ const Header = () => {
     <>
       <header className="header">
         <div className="user">
-        <img
+        
+      <span className="username">
+          <FiUser  /> : {loggedInUser.username}
+          </span>
+          <img
           className="user_avatar"
           src={loggedInUser.avatar_url}
           alt={loggedInUser.username}
         ></img>
-      <span className="username">
-          <FiUser  /> : {loggedInUser.username}
-        </span>
         </div>
         
         <div className="title_container">

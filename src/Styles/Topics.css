@@ -1,12 +1,12 @@
 .select_topics {
-    display: block;
-    text-align: center;
-    padding: 10px;
-    margin: 0 auto;
-    border-radius: 15px;
-    background-color: #3f2021;
-    color: #e9dbb2;
-    font-weight: 700;
-    border: solid 5px #e44222;
-    box-shadow: 1px 1px 8px 2px #e9dbb2;
+  display: block;
+  text-align: center;
+  padding: 10px;
+  margin: 0 auto;
+  border-radius: 15px;
+  background-color: #3f2021;
+  color: #e9dbb2;
+  font-weight: 700;
+  border: solid 5px #e44222;
+  box-shadow: 1px 1px 4px 1px #3f2021;
 }

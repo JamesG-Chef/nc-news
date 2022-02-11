@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { patchArticle } from "../Utils/api";
 
-const Votes = ({ votes, article_id, setShowVoteButton, showVoteButton }) => {
+const Votes = ({ votes, article_id }) => {
   const [voteChange, setVoteChange] = useState(0);
 
   const giveVote = () => {

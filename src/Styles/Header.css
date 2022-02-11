@@ -10,7 +10,7 @@
 }
 .title_container {
 background-color: #e9dbb2;
-margin: 10px 0px 5px 0px;;
+margin: 10px auto;
 padding: 5px 2px 2px 2px;
 border-radius: 10px;
 border: solid 1px #3f2021;
@@ -149,4 +149,13 @@ span.username {
 .home-button:disabled {
   cursor: default;
   opacity: .24;
+}
+
+@media only screen and (min-width: 820px) {
+  .title_container {
+      max-width: 750px;
+      
+      
+  }
+  
 }

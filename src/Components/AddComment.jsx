@@ -20,8 +20,8 @@ const AddComment = ({ article_id, comments, setComments }) => {
     <CommentForm
       article_id={article_id}
       comments={comments}
-        setComments={setComments}
-        setShowCommentForm={setShowCommentForm}
+      setComments={setComments}
+      setShowCommentForm={setShowCommentForm}
     />
   );
 };

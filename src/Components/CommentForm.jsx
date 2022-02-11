@@ -11,6 +11,7 @@ const CommentForm = ({
 }) => {
   const [form, setForm] = useState();
   const { loggedInUser } = useContext(UserContext);
+  const [err, setErr] = useState(false);
   const username = loggedInUser.username;
 
   function handleSubmit(event) {
@@ -19,7 +20,11 @@ const CommentForm = ({
       alert("Your comment has been submitted");
       setComments([...comments, data]);
       setShowCommentForm(false);
-    });
+    })
+      .catch(err => {
+        alert("Oops, something went wrong, please try again.")
+      
+    })
 
     setForm("");
   }
@@ -28,7 +33,7 @@ const CommentForm = ({
     console.log(event.target.value);
     setForm(event.target.value);
   }
-
+  if (err) return <p>{err}</p>;
   return (
     <div>
       <form onSubmit={handleSubmit} className="comment_form">
