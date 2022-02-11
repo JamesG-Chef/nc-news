@@ -1,10 +1,7 @@
 import React, { useEffect, useState, useContext } from "react";
 import { useParams } from "react-router-dom";
-import {
-  getArticleCard,
-  getArticleComments,
-} from "../Utils/api";
-import "../Styles/ArticleCard.css";
+import { getSingleArticle, getArticleComments } from "../Utils/api";
+import "../Styles/SingleArticle.css";
 import "../Styles/Comments.css";
 import ArticleVotes from "./ArticleVotes";
 import AddComment from "./AddComment";
@@ -12,8 +9,8 @@ import UserContext from "./LoggedInUser";
 import DeleteComment from "./DeleteComment";
 import CommentVotes from "./CommentVotes";
 
-const ArticleCard = () => {
-  const [article, setArticle] = useState([{}]);
+const SingleArticle = () => {
+  const [article, setArticle] = useState([]);
   const [comments, setComments] = useState([]);
   const [isLoading, setIsLoading] = useState(true);
   const [showVoteButton, setShowVoteButton] = useState(true);
@@ -23,7 +20,7 @@ const ArticleCard = () => {
   const username = loggedInUser.username;
 
   useEffect(() => {
-    return getArticleCard(article_id).then((article) => {
+    return getSingleArticle(article_id).then((article) => {
       setArticle(article);
     });
   }, [article_id]);
@@ -103,4 +100,4 @@ const ArticleCard = () => {
   );
 };
 
-export default ArticleCard;
+export default SingleArticle;

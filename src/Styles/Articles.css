@@ -1,80 +1,85 @@
 ul.article_list {
-    margin-right: 32px;
-    padding: none;
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+  margin-right: 32px;
+  padding: none;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-evenly;
 }
 .list_item {
-    display: block;
-    margin: 25px auto;
-    list-style: none;
-    padding: 0.75em;
-    color: #3f2021;
-    background-color: #a0d1ca;
-    border: solid 3px #e44222;
-    border-radius: 15px;
-    box-shadow: 1px 1px 8px 2px #e44222;
-    width: 100%;
-    min-width: 260px;
-    max-width: 300px;
-    min-height: 315px;;
+  display: block;
+  margin: 25px auto;
+  list-style: none;
+  padding: 0.75em;
+  color: #3f2021;
+  background-color: #a0d1ca;
+  border: solid 3px #e44222;
+  border-radius: 15px;
+  box-shadow: 1px 1px 8px 2px #e44222;
+  width: 100%;
+  min-width: 260px;
+  max-width: 300px;
+  min-height: 315px;
 }
 .links {
-    text-decoration: none;
-    color: #3f2021;
+  text-decoration: none;
+  color: #e9dbb2;
 }
 /* .links:visited {
     color: #a0d1ca;
-} */
+}   */
 .links:hover {
-    color: #e44222;
+  color: #3f2021;
 }
-.select_sort_by{
-    display: block;
-    text-align: center;
-    padding: 10px;
-    margin: 10px auto;
-    border-radius: 15px;
-    background-color: #3f2021;
-    color: #e9dbb2;
-    font-weight: 700;
-    border: solid 5px #e44222;
-    box-shadow: 1px 1px 4px 1px #3f2021;
+.select_sort_by {
+  display: block;
+  text-align: center;
+  padding: 10px;
+  margin: 10px auto;
+  border-radius: 15px;
+  background-color: #3f2021;
+  color: #e9dbb2;
+  font-weight: 700;
+  border: solid 5px #e44222;
+  box-shadow: 1px 1px 4px 1px #3f2021;
 }
 .loader_container {
-    position:relative
+  position: relative;
 }
 .loader {
-    position: absolute;
-    left: 50%;
-    top: 50%;
-    z-index: 1;
-    width: 120px;
-    height: 120px;
-    margin: -76px 0 0 -76px;
-    border: 16px solid #a0d1ca;
-    border-radius: 50%;
-    border-top: 16px solid #e44222;
-    -webkit-animation: spin 2s linear infinite;
-    animation: spin 2s linear infinite;
-  }
-  
-  @-webkit-keyframes spin {
-    0% { -webkit-transform: rotate(0deg); }
-    100% { -webkit-transform: rotate(360deg); }
-  }
-  
-  @keyframes spin {
-    0% { transform: rotate(0deg); }
-    100% { transform: rotate(360deg); }
-  }
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  z-index: 1;
+  width: 120px;
+  height: 120px;
+  margin: -76px 0 0 -76px;
+  border: 16px solid #a0d1ca;
+  border-radius: 50%;
+  border-top: 16px solid #e44222;
+  -webkit-animation: spin 2s linear infinite;
+  animation: spin 2s linear infinite;
+}
 
-  @media only screen and (min-width: 768px) {
-    .list_item {
-        max-width: 300px;
-        
-    }
-    
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
   }
-  
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+@media only screen and (min-width: 768px) {
+  .list_item {
+    max-width: 300px;
+  }
+}

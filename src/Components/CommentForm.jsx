@@ -16,15 +16,15 @@ const CommentForm = ({
 
   function handleSubmit(event) {
     event.preventDefault();
-    postComment(article_id, { username: username, body: form }).then((data) => {
-      alert("Your comment has been submitted");
-      setComments([...comments, data]);
-      setShowCommentForm(false);
-    })
-      .catch(err => {
-        alert("Oops, something went wrong, please try again.")
-      
-    })
+    postComment(article_id, { username: username, body: form })
+      .then((data) => {
+        alert("Your comment has been submitted");
+        setComments([...comments, data]);
+        setShowCommentForm(false);
+      })
+      .catch((err) => {
+        alert("Oops, something went wrong, please try again.");
+      });
 
     setForm("");
   }

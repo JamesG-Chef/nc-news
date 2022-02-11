@@ -27,7 +27,7 @@ export const getTopics = () => {
   });
 };
 
-export const getArticleCard = (article_id) => {
+export const getSingleArticle = (article_id) => {
     return newsApi.get(`articles/${article_id}`).then(({ data }) => {
     return data.article;
   });

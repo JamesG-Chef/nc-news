@@ -10,23 +10,22 @@ const Header = () => {
     <>
       <header className="header">
         <div className="user">
-        
-      <span className="username">
-          <FiUser  /> : {loggedInUser.username}
+          <span className="username">
+            <FiUser /> : {loggedInUser.username}
           </span>
           <img
-          className="user_avatar"
-          src={loggedInUser.avatar_url}
-          alt={loggedInUser.username}
-        ></img>
+            className="user_avatar"
+            src={loggedInUser.avatar_url}
+            alt={loggedInUser.username}
+          ></img>
         </div>
-        
+
         <div className="title_container">
-        <h1 className="title">
-          Hot Topics <FiCoffee id="coffee_icon" />
-        </h1>
+          <h1 className="title">
+            Hot Topics <FiCoffee id="coffee_icon" />
+          </h1>
         </div>
-        
+
         <div className="back_to_articles_button">
           <button aria-label="home-button" className="home-button">
             <Link className="home_link" to={"/"}>
