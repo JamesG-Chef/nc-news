@@ -6,7 +6,6 @@ import Articles from "./Components/Articles";
 import Comments from "./Components/AddComment";
 import Header from "./Components/Header";
 import UserContext from "./Components/LoggedInUser";
-import Nav from "./Components/Nav";
 import Topics from "./Components/Topics";
 
 function App() {

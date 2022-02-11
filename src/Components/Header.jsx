@@ -27,7 +27,7 @@ const Header = () => {
         </div>
         
         <div className="back_to_articles_button">
-          <button className="home-button">
+          <button aria-label="home-button" className="home-button">
             <Link className="home_link" to={"/"}>
               <p className="home-icon">
                 <FiHome />

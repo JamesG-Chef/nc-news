@@ -1,16 +1,24 @@
 import React, { useEffect, useState, useContext } from "react";
 import { Link, useParams } from "react-router-dom";
-import { deleteComment, getArticleCard, getArticleComments } from "../Utils/api";
+import {
+  deleteComment,
+  getArticleCard,
+  getArticleComments,
+} from "../Utils/api";
 import "../Styles/ArticleCard.css";
 import "../Styles/Comments.css";
-import Votes from "./Votes";
+import ArticleVotes from "./ArticleVotes";
 import AddComment from "./AddComment";
 import UserContext from "./LoggedInUser";
 import DeleteComment from "./DeleteComment";
+import CommentVotes from "./CommentVotes";
 
 const ArticleCard = () => {
   const [article, setArticle] = useState([{}]);
   const [comments, setComments] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [showVoteButton, setShowVoteButton] = useState(true);
+
   const { article_id } = useParams();
   const { loggedInUser } = useContext(UserContext);
   const username = loggedInUser.username;
@@ -22,29 +30,43 @@ const ArticleCard = () => {
   }, [article_id]);
 
   useEffect(() => {
-    return getArticleComments(article_id, ).then((commentsFromApi) => {
+    return getArticleComments(article_id).then((commentsFromApi) => {
       setComments(commentsFromApi);
+      setIsLoading(false);
     });
   }, [article_id]);
 
-  const removeComment = () => {};
-  
-  return (
+  return isLoading ? (
+    <div className="loader"></div>
+  ) : (
     <>
       <div className="article_container">
         <h1 className="article_title">{article[0].title}</h1>
         <h4 className="article_topic">{article[0].topic}</h4>
         <p className="article_by">By</p>
         <h4 className="article_author">{article[0].author}</h4>
-        <p className="article_by">Comments: {article[0].comment_count}</p>
+        <p className="article_by">Comments: ({article[0].comment_count})</p>
         <p className="article_body">{article[0].body}</p>
       </div>
       <div className="votes_button_container">
-        <Votes votes={article[0].votes} article_id={article_id} />
+        {showVoteButton ? (
+          <ArticleVotes
+            votes={article[0].votes}
+            article_id={article_id}
+            showVoteButton={showVoteButton}
+            setShowVoteButton={setShowVoteButton}
+          />
+        ) : null}
       </div>
 
       <div>
-        <AddComment article_id={article_id} comments={comments} setComments={setComments} />
+        {username ? (
+          <AddComment
+            article_id={article_id}
+            comments={comments}
+            setComments={setComments}
+          />
+        ) : null}
       </div>
 
       <ul className="comments_list">
@@ -62,10 +84,15 @@ const ArticleCard = () => {
               </li>
               <li>
                 <button className="comment_votes_button">
-                  Votes: {comment.votes}
+                  <CommentVotes votes={comment.votes}/>
                 </button>
                 {username === comment.author ? (
-                  <DeleteComment article_id={article_id} setComments={setComments} comment_id={comment.comment_id} comments={comments} />
+                  <DeleteComment
+                    article_id={article_id}
+                    setComments={setComments}
+                    comment_id={comment.comment_id}
+                    comments={comments}
+                  />
                 ) : null}
               </li>
               <li></li>
