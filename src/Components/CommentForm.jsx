@@ -18,9 +18,8 @@ const CommentForm = ({
     event.preventDefault();
     postComment(article_id, { username: username, body: form })
       .then((data) => {
-        alert("Your comment has been submitted");
-        setComments([...comments, data]);
-        setShowCommentForm(false);
+        setComments([data, ...comments]);
+        setShowCommentForm(false); 
       })
       .catch((err) => {
         alert("Oops, something went wrong, please try again.");
@@ -30,7 +29,6 @@ const CommentForm = ({
   }
 
   function handleChange(event) {
-    console.log(event.target.value);
     setForm(event.target.value);
   }
   if (err) return <p>{err}</p>;

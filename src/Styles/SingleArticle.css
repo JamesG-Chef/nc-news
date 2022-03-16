@@ -30,6 +30,33 @@
 }
 .article_author {
   text-align: center;
+  padding: 5px;
+  font-size: medium;
+  
+}
+.author_box {
+  display: flex;
+  justify-content: center;
+
+}
+.article_avatar_container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  border-radius: 15px;
+  border: solid 2px #3f2021;
+  box-shadow: 1px 1px 4px 1px #3f2021;
+  width: 120px;
+  background-color: white;
+}
+.article_author_avatar {
+  max-width: 100%;
+  max-height: 100%;
+border-radius: 15px;
+align-self: center;
+padding: 5px;
+ 
+
 }
 .article_body {
   margin: 10px;

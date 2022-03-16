@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
 import SingleArticle from "./Components/SingleArticle";
@@ -7,8 +7,10 @@ import Comments from "./Components/AddComment";
 import Header from "./Components/Header";
 import UserContext from "./Components/LoggedInUser";
 import Topics from "./Components/Topics";
+import { getUsers } from "./Utils/api";
 
 function App() {
+
   const [loggedInUser, setLoggedInUser] = useState({
     username: "tickle122",
     avatar_url:
