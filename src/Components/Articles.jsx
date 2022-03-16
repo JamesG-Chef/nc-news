@@ -60,7 +60,7 @@ const Articles = (props) => {
               </li>
               <li>
               
-                <h6 className="article_by">Author:{article.author}</h6>
+                <h6 className="article_by">By {article.author}</h6>
               </li>
               <li>
                 <h6 className="article_votes">Votes: ({article.votes})</h6>
@@ -72,7 +72,7 @@ const Articles = (props) => {
               </li>
               <li>
                 <h6 className="article_date">
-                  Created:{" "}
+                  
                   {moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a")}
                 </h6>
               </li>

@@ -59,13 +59,12 @@ export const postComment = (article_id, reqbody) => {
 
 export const deleteComment = (comment_id) => {
   return newsApi.delete(`comments/${comment_id}`).then((res) => {
-    console.log(res);
+    
   });
 };
 
 export const getSingleUser = (username) => {
   return newsApi.get(`/users/${username}`).then(({ data }) => {
-    
     return data;
   });
 };

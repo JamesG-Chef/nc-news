@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { postComment } from "../Utils/api";
 import "../Styles/AddComment.css";
 import CommentForm from "./CommentForm";
 
