@@ -1,16 +1,23 @@
-# Northcoders News API
-https://james-nc-news.herokuapp.com/api
+# NC. News App
+## Project summary
+
+- A mobile first, responsive Front-end app built using ReactJS.
+- NC news is an article based app, populated with an assortment of articles written by a number of users.
+- The app interacts with my own API accessing data from a postgreSQL database.
+- The articles can be sorted by a combination of topics (which are populated dynamically dependant on the database), comments, votes and date.
+- A logged in user is able to upvote an article and leave a comment.
+
+---
+## Front-end
+
+- Live URL: https://james-nc-news.herokuapp.com/api
 
 ---
 
-## Project summary
+## Back-end API
 
-A mobile first, responsive Front-end app built using ReactJS.
-NC news is an article based app, populated with an assortment of articles written by a number of users.
-The app interacts with my own API hosted at https://james-nc-news.herokuapp.com/api, accessing data from a postgreSQL database.
-The articles can be sorted by a combination of topics (which are populated dynamically dependant on the database), comments, votes and date.
-A logged in user is able to upvote an article and leave a comment.
-
+- Live URL: https://james-nc-news.herokuapp.com/api
+- GitHub: https://github.com/JamesG-Chef/be-nc-news
 
 ---
 ## Download
