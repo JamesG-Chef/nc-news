@@ -1,6 +1,7 @@
 # NC. News App
-![Screenshot 2022-03-18 at 13 56 54](https://user-images.githubusercontent.com/64259737/159016153-d2a63df9-bdac-48c5-8d7a-b67c2c989708.png)
-![Screenshot 2022-03-18 at 13 57 29](https://user-images.githubusercontent.com/64259737/159016245-11c6ddc4-c907-42b6-97ba-8f4747b917e1.png)
+![Screenshot 2022-03-18 at 14 08 48](https://user-images.githubusercontent.com/64259737/159018246-96dbac59-e984-4eca-9e5f-90d708c9e8bf.png)
+![Screenshot 2022-03-18 at 14 09 23](https://user-images.githubusercontent.com/64259737/159018344-026389a5-7308-4556-aea6-36d88dc9c9ed.png)
+
 ## Project summary
 
 - A mobile first, responsive Front-end app built using ReactJS.
