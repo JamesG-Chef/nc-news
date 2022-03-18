@@ -1,15 +1,10 @@
 import React, { useEffect, useState, useContext } from "react";
-import { useParams } from "react-router-dom";
-import UserContext from "./LoggedInUser";
 import { getArticleComments } from "../Utils/api";
 import "../Styles/Comments.css";
 import SingleComment from "./SingleComment";
 
-const Comments = () => {
-  const [comments, setComments] = useState([]);
+const Comments = ({ article_id, comments, setComments }) => {
   const [isLoading, setIsLoading] = useState(true);
-  const { article_id } = useParams();
-  const { loggedInUser } = useContext(UserContext);
 
   useEffect(() => {
     return getArticleComments(article_id).then((commentsFromApi) => {

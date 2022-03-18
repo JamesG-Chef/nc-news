@@ -1,7 +1,7 @@
 import React, { useContext } from "react";
 import "../Styles/Header.css";
 import { FiHome, FiCoffee, FiUser } from "react-icons/fi";
-import { Link, useParams } from "react-router-dom";
+import { Link } from "react-router-dom";
 import UserContext from "./LoggedInUser";
 
 const Header = () => {
@@ -10,19 +10,19 @@ const Header = () => {
     <>
       <header className="header">
         <div className="user">
-          <span className="username">
-            <FiUser /> : {loggedInUser.username}
-          </span>
-          <img
-            className="user_avatar"
-            src={loggedInUser.avatar_url}
-            alt={loggedInUser.username}
-          ></img>
+          <div className="loggedin_user_avatar_box">
+            <img
+              className="user_avatar"
+              src={loggedInUser.avatar_url}
+              alt={loggedInUser.username}
+            ></img>
+          </div>
+          <span className="username">{loggedInUser.username}</span>
         </div>
 
         <div className="title_container">
           <h1 className="title">
-            Hot Topics <FiCoffee id="coffee_icon" />
+            NC. News <FiCoffee id="coffee_icon" />
           </h1>
         </div>
 

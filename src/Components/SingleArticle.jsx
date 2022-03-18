@@ -12,9 +12,8 @@ import Comments from "./Comments";
 const SingleArticle = () => {
   const [article, setArticle] = useState([]);
   const [comments, setComments] = useState([]);
-  const [showVoteButton, setShowVoteButton] = useState(true);
   const [user, setUser] = useState();
-
+  const [isLoading, setIsLoading] = useState(true);
   const { article_id } = useParams();
   const { loggedInUser } = useContext(UserContext);
   const username = loggedInUser.username;
@@ -28,10 +27,15 @@ const SingleArticle = () => {
   useEffect(() => {
     return getSingleUser(article.author).then((userData) => {
       setUser(userData);
+      setIsLoading(false);
     });
   }, [article.author]);
 
-  return (
+  return isLoading ? (
+    <div className="loader_background">
+      <div className="loader"></div>
+    </div>
+  ) : (
     <>
       <div className="article_container">
         <h1 className="article_title">{article.title}</h1>
@@ -54,14 +58,7 @@ const SingleArticle = () => {
         <p className="article_body">{article.body}</p>
       </div>
       <div className="votes_button_container">
-        {showVoteButton ? (
-          <ArticleVotes
-            votes={article.votes}
-            article_id={article_id}
-            showVoteButton={showVoteButton}
-            setShowVoteButton={setShowVoteButton}
-          />
-        ) : null}
+        <ArticleVotes votes={article.votes} article_id={article_id} />
       </div>
 
       <div>
@@ -73,7 +70,11 @@ const SingleArticle = () => {
           />
         ) : null}
       </div>
-      <Comments />
+      <Comments
+        article_id={article_id}
+        comments={comments}
+        setComments={setComments}
+      />
     </>
   );
 };

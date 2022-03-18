@@ -8,8 +8,6 @@ import "../Styles/Comments.css";
 import moment from "moment";
 
 const SingleComment = ({ comment, date, comments, setComments }) => {
-  
-  const [isLoading, setIsLoading] = useState(true);
   const [user, setUser] = useState();
   const { article_id } = useParams();
   const { loggedInUser } = useContext(UserContext);

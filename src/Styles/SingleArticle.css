@@ -17,7 +17,7 @@
 .article_title {
   font-weight: 700;
   text-align: center;
-  padding: 15px;
+  padding: 5px;
   background-color: #e44222;
   border-radius: 15px;
   border: solid 2px #3f2021;
@@ -45,12 +45,11 @@
   border-radius: 15px;
   border: solid 2px #3f2021;
   box-shadow: 1px 1px 4px 1px #3f2021;
-  width: 120px;
+  width: 130px;
   background-color: white;
 }
 .article_author_avatar {
-  max-width: 100%;
-  max-height: 100%;
+  max-width: 80px;
   border-radius: 15px;
   align-self: center;
   padding: 5px;
@@ -183,10 +182,6 @@
   top: 4px;
 }
 
-.votes_button:disabled {
-  cursor: default;
-  opacity: 0.24;
-}
 
 @media only screen and (min-width: 768px) {
   .article_container {

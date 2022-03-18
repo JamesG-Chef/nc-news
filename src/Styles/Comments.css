@@ -4,7 +4,7 @@ ul.comments_list {
 .comment_author_details_box {
   display: flex;
   flex-direction: row;
-  width: auto;
+  width: 50%;
   height: 45px;
   background-color: white;
   border-radius: 15px;
@@ -31,7 +31,7 @@ ul.comments_list {
   margin: 4px;
 }
 .comment_author_name {
-  font-size: large;
+  font-size:small;
   padding: 5px;
   
   

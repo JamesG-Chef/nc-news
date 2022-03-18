@@ -22,20 +22,29 @@ h1 .title {
   padding-top: 10px;
 }
 .user {
-  display: block;
-text-align: right;
+  display: flex;
+  flex-direction: row-reverse;
+
+}
+.loggedin_user_avatar_box {
+background-color: white;
+border: solid 2px #0c0d0d ;
+  border-radius: 10px;
+  border: solid 2px #3f2021;
+  box-shadow: 1px 1px 4px 1px #3f2021;
 }
 .user_avatar {
-  border: solid 2px #0c0d0d ;
-  border-radius: 10px;
-  width: 30px;
-  object-fit: cover;
+   
+  width: 45px;
+  padding: 2px;
+  align-self: center;
+  margin-top: 2px;
 }
 span.username {
   font-size: 15px;
   font-weight: 600;
-  padding: 15px;
-  text-align: end;
+  padding: 10px;
+  
 }
 #coffee_icon {
   font-size: 33px;

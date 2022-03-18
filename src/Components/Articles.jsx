@@ -3,13 +3,12 @@ import { Link } from "react-router-dom";
 import { getArticles } from "../Utils/api";
 import "../Styles/Articles.css";
 import moment from "moment";
-
+import GetUserAvatar from "./GetUserAvatar";
 
 const Articles = (props) => {
   const { topicSelected } = props;
   const [articles, setArticles] = useState([]);
   const [sortBy, setSortBy] = useState("sort_by");
-  const [orderby, setOrderBy] = useState();
   const [isLoading, setIsLoading] = useState(true);
 
   useEffect(() => {
@@ -48,34 +47,42 @@ const Articles = (props) => {
           const date = article.created_at;
 
           return (
-            
             <div key={article.article_id} className="list_item">
+              <li className="article_avatar_container_box">
+                <GetUserAvatar article={article} />
+                <h6>
+                  
+                    {moment(date).format("dddd, MMMM Do YYYY")}
+                  
+                </h6>
+              </li>
               <Link className="links" to={`/articles/${article.article_id}`}>
                 <li>
                   <h4 className="article_title">{article.title}</h4>
                 </li>
               </Link>
-              <li>
-                <h6 className="article_topic">Topic: {article.topic}</h6>
+              <li className="article_info_box">
+                <h6>
+                  <span className="article_info">Topic: {article.topic}</span>
+                </h6>
+                <h6>
+                  <span className="article_info">Votes: ({article.votes})</span>
+                </h6>
+                <h6>
+                  <span className="article_info">
+                    Comments: ({article.comment_count})
+                  </span>
+                </h6>
               </li>
-              <li>
-              
-                <h6 className="article_by">By {article.author}</h6>
-              </li>
-              <li>
+
+              {/* <li>
                 <h6 className="article_votes">Votes: ({article.votes})</h6>
               </li>
               <li>
                 <h6 className="article_comments">
                   Comments: ({article.comment_count})
                 </h6>
-              </li>
-              <li>
-                <h6 className="article_date">
-                  
-                  {moment(date).format("dddd, MMMM Do YYYY, h:mm:ss a")}
-                </h6>
-              </li>
+              </li> */}
             </div>
           );
         })}

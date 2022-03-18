@@ -7,7 +7,7 @@ import Comments from "./Components/AddComment";
 import Header from "./Components/Header";
 import UserContext from "./Components/LoggedInUser";
 import Topics from "./Components/Topics";
-import { getUsers } from "./Utils/api";
+
 
 function App() {
 
@@ -19,7 +19,7 @@ function App() {
 
   const [topicSelected, setTopicSelection] = useState("All");
 
-  const isLoggedIn = loggedInUser !== null;
+  // const isLoggedIn = loggedInUser !== null;
 
   return (
     <BrowserRouter>

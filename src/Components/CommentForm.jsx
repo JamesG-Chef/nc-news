@@ -18,8 +18,8 @@ const CommentForm = ({
     event.preventDefault();
     postComment(article_id, { username: username, body: form })
       .then((data) => {
+        setShowCommentForm(false);
         setComments([data, ...comments]);
-        setShowCommentForm(false); 
       })
       .catch((err) => {
         alert("Oops, something went wrong, please try again.");
