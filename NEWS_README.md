@@ -12,7 +12,7 @@
 ---
 ## Front-end
 
-- Live URL: https://james-nc-news.herokuapp.com/api
+- Live URL: https://jamesg-chef-nc-news.netlify.app/
 
 ---
 
