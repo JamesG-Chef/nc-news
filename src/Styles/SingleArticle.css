@@ -113,12 +113,6 @@ align-items: center;
   z-index: 0;
 }
 
-@media (min-width: 768px) {
-  .votes_button {
-    padding: 19px 32px;
-  }
-}
-
 .votes_button:before,
 .votes_button:after {
   border-radius: 80px;

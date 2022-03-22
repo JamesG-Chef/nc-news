@@ -30,7 +30,6 @@ const CommentVotes = ({ votes, comment_id }) => {
         disabled={disabled}
         onClick={() => downVote()}
         className="comment_votes_button"
-        role="button"
       >
         <BiDownvote />
       </button>
@@ -39,7 +38,6 @@ const CommentVotes = ({ votes, comment_id }) => {
         disabled={disabled}
         onClick={() => giveVote()}
         className="comment_votes_button"
-        role="button"
       >
         <BiUpvote />
       </button>

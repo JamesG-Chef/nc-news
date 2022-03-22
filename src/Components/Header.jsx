@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import "../Styles/Header.css";
-import { FiHome, FiCoffee, FiUser } from "react-icons/fi";
+import { FiHome, FiCoffee } from "react-icons/fi";
 import { Link } from "react-router-dom";
 import UserContext from "./User/LoggedInUser";
 

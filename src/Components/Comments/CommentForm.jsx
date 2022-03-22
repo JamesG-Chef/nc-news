@@ -22,6 +22,7 @@ const CommentForm = ({
         setComments([data, ...comments]);
       })
       .catch((err) => {
+        setErr(err)
         alert("Oops, something went wrong, please try again.");
       });
 

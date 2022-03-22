@@ -1,4 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
+import React, { useEffect, useState} from "react";
 import { getArticleComments } from "../../Utils/api";
 import "../../Styles/Comments.css";
 import SingleComment from "./SingleComment";

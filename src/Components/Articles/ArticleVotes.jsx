@@ -29,7 +29,6 @@ const Votes = ({ votes, article_id }) => {
         disabled={disabled}
         onClick={() => giveVote()}
         className="votes_button"
-        role="button"
       >
         <BiUpvote />
       </button>
@@ -38,7 +37,6 @@ const Votes = ({ votes, article_id }) => {
         disabled={disabled}
         onClick={() => downVote()}
         className="votes_button"
-        role="button"
       >
         <BiDownvote />
       </button>
