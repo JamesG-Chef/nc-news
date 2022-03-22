@@ -1,6 +1,6 @@
 # NC. News App
-![Screenshot 2022-03-18 at 14 08 48](https://user-images.githubusercontent.com/64259737/159018246-96dbac59-e984-4eca-9e5f-90d708c9e8bf.png)
-![Screenshot 2022-03-18 at 14 09 23](https://user-images.githubusercontent.com/64259737/159018344-026389a5-7308-4556-aea6-36d88dc9c9ed.png)
+![Screenshot 2022-03-22 at 12 36 05](https://user-images.githubusercontent.com/64259737/159483390-f43fa042-440a-4a30-b716-2cfe418ab36f.png)
+![Screenshot 2022-03-22 at 12 36 47](https://user-images.githubusercontent.com/64259737/159483501-3967422e-6de3-4a4e-8809-dad405ee6724.png)
 
 ## Project summary
 
