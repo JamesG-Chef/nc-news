@@ -41,9 +41,17 @@ export const getArticleComments = (article_id, sort_by, order) => {
     });
 };
 
-export const patchArticle = (article_id) => {
+export const upvoteArticle = (article_id) => {
   return newsApi
     .patch(`articles/${article_id}`, { inc_votes: 1 })
+    .then((res) => {
+      return res.data.article;
+    });
+};
+
+export const downvoteArticle = (article_id) => {
+  return newsApi
+    .patch(`articles/${article_id}`, { inc_votes: -1 })
     .then((res) => {
       return res.data.article;
     });
@@ -58,9 +66,23 @@ export const postComment = (article_id, reqbody) => {
 };
 
 export const deleteComment = (comment_id) => {
-  return newsApi.delete(`comments/${comment_id}`).then((res) => {
-    
-  });
+  return newsApi.delete(`comments/${comment_id}`).then((res) => {});
+};
+
+export const upvoteComment = (comment_id) => {
+  return newsApi
+    .patch(`comments/${comment_id}`, { inc_votes: 1 })
+    .then((res) => {
+      return res.data.comment;
+    });
+};
+
+export const downvoteComment = (comment_id) => {
+  return newsApi
+    .patch(`comments/${comment_id}`, { inc_votes: -1 })
+    .then((res) => {
+      return res.data.comment;
+    });
 };
 
 export const getSingleUser = (username) => {

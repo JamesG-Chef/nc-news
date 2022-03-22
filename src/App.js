@@ -1,16 +1,14 @@
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
 import "./App.css";
-import SingleArticle from "./Components/SingleArticle";
-import Articles from "./Components/Articles";
-import Comments from "./Components/AddComment";
+import SingleArticle from "./Components/Articles/SingleArticle";
+import Articles from "./Components/Articles/Articles";
+import Comments from "./Components/Comments/AddComment";
 import Header from "./Components/Header";
-import UserContext from "./Components/LoggedInUser";
+import UserContext from "./Components/User/LoggedInUser";
 import Topics from "./Components/Topics";
 
-
 function App() {
-
   const [loggedInUser, setLoggedInUser] = useState({
     username: "tickle122",
     avatar_url:
@@ -45,6 +43,7 @@ function App() {
                 path="/articles/:article_id/comments"
                 element={<Comments />}
               />
+              <Route path="*" element={<Articles />} />
             </Routes>
           </main>
         </div>

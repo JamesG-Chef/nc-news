@@ -1,4 +1,6 @@
 .comments_button_container {
+  display: flex;
+  justify-content: center;
 }
 
 .add_comments_button {
