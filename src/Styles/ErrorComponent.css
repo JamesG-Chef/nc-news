@@ -1,4 +1,8 @@
-
+.page_container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
 .error_container {
     display: flex;
     flex-direction: column;
@@ -32,6 +36,7 @@
     border: solid 2px white;
     box-shadow: 1px 1px 4px 1px #3f2021;
     width: 90vw;
+    max-width: 535px;
     background-color: white;
     margin: 30px;
 }
@@ -41,4 +46,5 @@
     object-fit: cover;
     overflow: hidden;
     border-radius: 15px;
+    
 }
